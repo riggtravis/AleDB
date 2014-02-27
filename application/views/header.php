@@ -1,6 +1,6 @@
 <!--The following is required by bootstrap.-->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<title><?php echo $title; ?></title>
 		<!--Bootstrap requires that the encoding be UTF-8-->
