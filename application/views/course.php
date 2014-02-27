@@ -1,5 +1,5 @@
 <!--create a table for the groups.-->
-<table>
+<table class="table">
 	<tr>
 		<th>GroupID</th>
 		<th>Community Partner</th>
