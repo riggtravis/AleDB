@@ -13,6 +13,7 @@ class Login extends CI_Controller {
 		$data['title'] = 'Login';
 		$this->load->view('login_header', $data);
 		$this->load->view('login_body');
+		$this->load->view('footer');
 	}
 
 	// Create a function that checks the username and the mda5 hash of the pwd
@@ -52,6 +53,7 @@ class Login extends CI_Controller {
 				$this->load->view('login_header');
 				$this->load->view('login_retry');
 				$this->load->view('login_body');
+				$this->load->view('footer');
 			}
 			else{
 				// person is an array with only one element.
@@ -91,6 +93,7 @@ class Login extends CI_Controller {
 		else{
 				$this->load->view('login_header');
 				$this->load->view('login_body');
+				$this->laod->view('footer');
 		}
 	}
 
