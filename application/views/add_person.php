@@ -1,7 +1,7 @@
 <body>
   <?php
     // Load the form helper. It will come in handy.
-    $this->load-->helper("form");
+    $this->load->helper("form");
     
     // Show the validation errors();
     echo validation_errors();
