@@ -36,5 +36,3 @@
     echo form_submit('submit', 'Go', $js);
     echo form_close();
   ?>
-  </body>
-</html>
