@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Login</title>
+    <title><?php echo $title; ?></title>
     <script>
 		/**
 		*
