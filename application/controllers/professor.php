@@ -143,7 +143,7 @@ class Professor extends CI_controller {
 	public function add_person() {
 		// Direct the user to the create user form.
 		$data['title'] = "Add Person";
-		$this->load->view('header', $data);
+		$this->load->view('login_header', $data);
 		$this->load->view('add_person', $data);
 		$this->load->view('footer', $data);
 	}
