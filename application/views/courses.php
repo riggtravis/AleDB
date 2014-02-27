@@ -1,5 +1,5 @@
 <!--We need to create a table with two fields-->
-<table>
+<table class="table">
 	<tr>
 		<th>Department</th>
 		<th>Course Number</th>
