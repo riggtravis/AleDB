@@ -216,7 +216,7 @@
     <link
     	rel="styleship"
     	type="text/css"
-    	href="<?php echo base_url() . 'assets/bootstrap-3.1.1-dist'; ?>"
+    	href="<?php echo base_url() . 'assets/bootstrap-3.1.1-dist/css/boostrap.css'; ?>"
     	type="text/css"
     />
   </head>
