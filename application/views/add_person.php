@@ -37,7 +37,7 @@
       'lname'     => 'lname',
       'id'        => 'lname',
       'value'     => set_value('Last Name'),
-      'name'      => 'lname'
+      'name'      => 'lname',
       'maxlength' => '18'
     );
     
