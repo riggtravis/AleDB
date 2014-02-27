@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title><?php echo $title; ?></title>
@@ -209,4 +210,7 @@
 			document.getElementById('password').value = MD5(document.getElementById('password').value);
 		}
     </script>
+    <!--Bootstrap requires UTF-8 encoding.-->
+    <meta charset="UTF-8" />
   </head>
+  <body>
