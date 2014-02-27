@@ -210,8 +210,10 @@
 			document.getElementById('password').value = MD5(document.getElementById('password').value);
 		}
     </script>
+    
     <!--Bootstrap requires UTF-8 encoding.-->
     <meta charset="UTF-8" />
+    
     <!--Link bootstrap-->
     <link
     	rel="styleship"
@@ -219,5 +221,11 @@
     	href="<?php echo base_url() . 'assets/bootstrap-3.1.1-dist/css/boostrap.css'; ?>"
     	type="text/css"
     />
+    
+    <!--Bootstrap requires jQuery.-->
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    
+    <!--Link to the rest to the bootstrap.-->
+    <script src="<?php echo base_url() . 'assets/bootstrap-3.1.1-dist/js/bootstrap.js'; ?>"></script>
   </head>
   <body>
