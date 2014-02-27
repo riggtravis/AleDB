@@ -133,6 +133,19 @@ class Professor extends CI_controller {
 		// Get the course info from the URI.
 		$department	= $this->uri->segment(3);
 		$coursenum	= $this->uri->segment(4);
+		
+		// Load the create group form.
+		//TODO: Look up the create group form in the views.
+		//	If it is not there, then:
+		//		TODO: Crate the create group form.
+	}
+	
+	public function add_person() {
+		// Direct the user to the create user form.
+		$data['title'] = "Add Person";
+		$this->load->view('header', $data);
+		$this->load->view('add_person', $data);
+		$this->load->view('footer', $data);
 	}
 };
 ?>
