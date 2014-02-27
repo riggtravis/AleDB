@@ -9,7 +9,9 @@ class Login extends CI_Controller {
 
 	public function index() {
 		// Load the login view
-		$this->load->view('login_header');
+		// I changed how the title is entered, so we are going to need a data array to contain the title.
+		$data['title'] = 'Login';
+		$this->load->view('login_header', $data);
 		$this->load->view('login_body');
 	}
 
