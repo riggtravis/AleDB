@@ -25,7 +25,10 @@ The following files have been edited for the purposes of AleDB:
 * application/config/config.php
 * index.php
 
-The following files are not a part of CodeIgniter:
+The following files are a part of Bootstrap and are licensed as such:
+* Everything in assets/bootstrap-3.1.1-dist
+
+The following files are not a part of CodeIgniter, and are part of AleDB:
 * application/models/courses_model.php
 * application/models/groups_model.php
 * application/models/people_model.php
