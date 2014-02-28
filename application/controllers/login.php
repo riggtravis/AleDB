@@ -27,7 +27,8 @@ class Login extends CI_Controller {
 
 		// Change the error types to div tags so that we can change the
 		//	colors of the text later.
-		$this->form_validation->set_error_delimiters('<div class="error">', 
+		// Change them further to be more bootstrappy.
+		$this->form_validation->set_error_delimiters('<div class="text-error">', 
 			'</div>');
 
 		// Set the validation rules
