@@ -93,7 +93,7 @@ class Login extends CI_Controller {
 		else{
 				$this->load->view('login_header');
 				$this->load->view('login_body');
-				$this->laod->view('footer');
+				$this->load->view('footer');
 		}
 	}
 
