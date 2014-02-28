@@ -1,7 +1,5 @@
 <?php
 class Login extends CI_Controller {
-	// This file has been modified for the purposes of testing.
-	
 	// There is something wrong with the extends keyword.
 	//	The solution is to include a constructor that explicity says that it is
 	//	Based on the constructor of the class that is being extended.
