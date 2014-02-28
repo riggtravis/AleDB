@@ -91,9 +91,10 @@ class Login extends CI_Controller {
 			}
 		}
 		else{
-				$this->load->view('login_header');
-				$this->load->view('login_body');
-				$this->load->view('footer');
+			$data['title'] = "Try Again";
+			$this->load->view('login_header', $data);
+			$this->load->view('login_body');
+			$this->load->view('footer');
 		}
 	}
 
