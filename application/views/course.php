@@ -36,6 +36,6 @@
 		$this->load->helper('url');
 		$department = $this->uri->segment(3);
 		$coursenum	= $this->uri->segment(4);
-		echo anchor("pofessor/create_group/$department/$coursenum", "Create a Group");
+		echo anchor("professor/create_group/$department/$coursenum", "Create a Group");
 	?>
 </div>
