@@ -15,7 +15,7 @@
   $username = array(
   'username'	=> 'username',
   'id'			=> 'username',
-  'value'		=> set_value('username'),
+  'value'		=> 'username',
   'name'		=> 'username',
   'maxlength'	=> '20'
   );
