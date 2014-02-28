@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--Bootstrap requires UTF-8 encoding.-->
+    <meta charset="UTF-8" />
+    
+    <!--Include the viewport tag, ensuring nice looking layouts.-->
+    <meta
+    	name="viewport"
+    	content="width=device-width, initial-scale=1"
+    />
+    
     <title><?php echo $title; ?></title>
     <script>
 		/**
@@ -210,9 +219,6 @@
 			document.getElementById('password').value = MD5(document.getElementById('password').value);
 		}
     </script>
-    
-    <!--Bootstrap requires UTF-8 encoding.-->
-    <meta charset="UTF-8" />
     
     <!--Link bootstrap-->
     <link
