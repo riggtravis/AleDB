@@ -22,8 +22,15 @@
       $password = array(
         'password'  => 'password',
         'id'        => 'password',
-        'value'     => set_value('username'),
-        'name'      => 'username'
+        'value'     => set_value('password'),
+        'name'      => 'password'
+      );
+      
+      $confirm = array(
+        'confirm'   => 'confirm',
+        'id'        => 'confirm',
+        'value'     => set_value('confirm'),
+        'name'      => 'confirm'
       );
       
       $fname = array(
@@ -52,6 +59,7 @@
       
       echo form_input($username);
       echo form_password($password);
+      echo form_password($confirm);
       echo form_input($fname);
       echo form_input($lname);
       
