@@ -69,7 +69,7 @@
 	      // Add labels to all of the inputs using the form helper label function.
 	      echo form_label('Username', 'username', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
 	    ?>
-	    <div class='col-sm-1 col-md-1 col-lg-1'>
+	    <div class='col-sm-2 col-md-2 col-lg-2'>
 	      <?php
 					echo form_input($username);
 	      ?>
@@ -79,7 +79,7 @@
 	    <?php
 	      echo form_label('Password', 'password', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
 	    ?>
-	    <div class='col-sm-1 col-md-1 col-lg-1'>
+	    <div class='col-sm-2 col-md-2 col-lg-2'>
 	      <?php
 					echo form_password($password);
 	      ?>
@@ -89,7 +89,7 @@
 	    <?php
 	      echo form_label('Confirm', 'confirm', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
 	    ?>
-	    <div class='col-sm-1 col-md-1 col-lg-1'>
+	    <div class='col-sm-2 col-md-2 col-lg-2'>
 	      <?php
 					echo form_password($confirm);
 	      ?>
@@ -99,7 +99,7 @@
 	    <?php
 	      echo form_label('Firstname', 'fname', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
 	    ?>
-	    <div class='col-sm-1 col-md-1 col-lg-1'>
+	    <div class='col-sm-2 col-md-2 col-lg-2'>
 	      <?php
 					echo form_input($fname);
 	      ?>
@@ -109,7 +109,7 @@
 	    <?php
 	      echo form_label('Lastname', 'lname', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
 	    ?>
-	    <div class='col-sm-1 col-md-1 col-lg-1'>
+	    <div class='col-sm-2 col-md-2 col-lg-2'>
 	      <?php
 					echo form_input($lname);
 	      ?>
@@ -127,7 +127,7 @@
 	    <?php
 	      echo form_label('Role', 'role', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
 	    ?>
-	    <div class='col-sm-1 col-md-1 col-lg-1'>
+	    <div class='col-sm-2 col-md-2 col-lg-2'>
 	      <?php
 					echo form_dropdown('role', $roles, 'Student');
 	      ?>
