@@ -8,7 +8,8 @@
       echo validation_errors();
       
       // Send the data to a validation function.
-      echo form_open("professor/person_validate");
+      // Add bootstrap information into the attributes parameter.
+      echo form_open("professor/person_validate", array('class' => 'form-horizontal', 'role' => 'form'));
       
       $username = array(
         'username'  => 'username',
