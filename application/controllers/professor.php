@@ -17,17 +17,20 @@ class Professor extends CI_controller {
 		// Add a field for the title.
 		$data['title'] = $data['professor']->FName . ' ' . $data['professor']->LName;
 		$this->load->view("header", $data);
-		$this->load->view("professor_control_center");
-		$this->load->view("footer");
+		$this->load->view("professor_control_center", $data);
+		// TODO: Load actual information into this area.
+		//	Preferably all students under the current professor.
+		
+		$this->load->view("footer", $data);
 	}
 	
 	public function create_course() {
 		// Load the form creation form.
 		$data["title"] = "Create Course";
 		$this->load->view("header", $data);
-		$this->load->view("professor_control_center");
-		$this->load->view("create_course");
-		$this->load->view("footer");
+		$this->load->view("professor_control_center", $data);
+		$this->load->view("create_course", $data);
+		$this->load->view("footer", $data);
 	}
 	
 	public function course_validate() {
@@ -125,6 +128,7 @@ class Professor extends CI_controller {
 		
 		$data['title'] = $department . $coursenum;
 		$this->load->view('header', $data);
+		$this->load->view('professor_control_center', $data);
 		$this->load->view('course', $data);
 		$this->load->view('footer', $data);
 	}
