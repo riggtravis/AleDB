@@ -16,55 +16,64 @@
 			echo form_label(
 				'Department', 
 				'department',
-				array(
-					'class' => 'col-sm-1 col-md-1 col-lg-1',
-				)
+				array('class' => 'col-sm-1 col-md-1 col-lg-1 control-label')
 			);
-
-			$department = array(
-				'department'	=> 'department',
-				'id'			=> 'department',
-				'value'			=> set_value('department'),
-				'name'			=> 'department',
-				'maxlength'		=> '5',
-				'class' => 'col-sm-1 col-md-1 col-lg-1'
-			);
-			echo form_input($department);	
 		?>
+		<div class = 'col-sm-2 col-md-2 col-lg-2'>
+			<?php
+				$department = array(
+					'department'	=> 'department',
+					'id'			=> 'department',
+					'value'			=> set_value('department'),
+					'name'			=> 'department',
+					'maxlength'		=> '5',
+					'class'	=> 'form-control'
+				);
+				echo form_input($department);	
+			?>
+		</div>
 	</div>
 	<div class="form-group">
 		<?php
 			echo form_label(
 				'Course Number', 
 				'coursenum',
-				array('class' => 'col-sm-1 col-md-1 col-lg-1')
+				array('class' => 'col-sm-1 col-md-1 col-lg-1 control-label')
 			);
-			$coursenum = array(
-				'coursenum'		=> 'coursenum',
-				'id'			=> 'coursenum',
-				'value'			=> set_value('000'),
-				'name'			=> 'coursenum',
-				'class' => 'col-sm-1 col-md-1 col-lg-1'
-			);
-			echo form_input($coursenum);
 		?>
+		<div class="col-sm-2 col-md-2 col-lg-2">
+			<?php
+				$coursenum = array(
+					'coursenum'		=> 'coursenum',
+					'id'			=> 'coursenum',
+					'value'			=> set_value('000'),
+					'name'			=> 'coursenum',
+					'class' => 'form-control'
+				);
+				echo form_input($coursenum);
+			?>
+		</div>
 	</div>
 	<div class="form-group">
 		<?php
 			echo form_label(
 				'Submit',
 				'submit',
-				array('class' => 'col-sm-1 col-md-1 col-lg-1')
+				array('class' => 'col-sm-1 col-md-1 col-lg-1 control-label')
 			);
-			$go = array(
-				'submit'	=> 'submit',
-				'id'		=> 'submit',
-				'name'		=> 'submit',
-				'value'		=> 'Go',
-				'class' => 'col-sm-1 col-md-1 col-lg-1'
-			);
-			echo form_submit($go);
 		?>
+		<div class = 'col-sm-1 col-md-1 col-lg-1'>
+			<?php
+				$go = array(
+					'submit'	=> 'submit',
+					'id'		=> 'submit',
+					'name'		=> 'submit',
+					'value'		=> 'Go',
+					'class' => 'form-control'
+				);
+				echo form_submit($go);
+			?>
+		<div>
 	</div>
 	<?php
 		echo form_close();
