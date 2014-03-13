@@ -147,5 +147,87 @@ class Professor extends CI_controller {
 		$this->load->view('add_person', $data);
 		$this->load->view('footer', $data);
 	}
+
+	public function person_validate() {
+		// Load the validation library.
+		$this->load->library('form_validation');
+
+		// Change the error type.
+		$this->form_validation->set_error_delimiters(
+			'<div class="error">', '</div>');
+
+		// Set the validation rules.
+		$this->form_validation->set_rules('username', 'username',
+			'trim|required|max_length[20]|xss_clean|callback_username_check');
+		$this->form_validation->set_rules('password', 'password',
+			'trim|required|xss_clean');
+		
+		// Create a rule that forces confirm and password to equal.
+		$this->form_validation->set_rules('confirm', 'confirm',
+			'trim|required|xss_clean|equals_password['.$this->input->post('password').']');
+
+		$this->form_validation->set_rules('firstname', 'fname',
+			'trim|required|xss_clean');
+		$this->form_validation->set_rules('lastname', 'lname',
+			'trim|required|xss_clean');
+
+		if($this->form_validation->run()){	
+			// Add the new entry.
+			$this->load->model('people_model');
+			$this->people_model->insert_entry(
+				$this->input->post('password'),
+				$this->input->post('username'),
+				$this->input->post('role'),
+				$this->input->post('fname'),
+				$this->input->post('lname')
+			);
+			$this->index();
+		}
+		else{
+			$data['title'] = "Add Person";
+			$this->load->view('login_header', $data);
+			$this->load->view('professor_control_center', $data);
+			$this->load->view('add_person', $data);
+			$this->load->view('footer', $data);
+		}
+	}
+
+	// Create a function to check the username against what's in the database
+	public function username_check($str) {
+		// This function needs the validation library
+		$this->load->library('form_validation');
+
+		// Make sure the user didn't just tab into the next field.
+		if($str == 'username'){
+			// Create a message to display when the username wasn't filled
+			$this->form_validation->set_message('username_check',
+				'The %s field cannot be "username."');
+
+			// Return false because the test has failed.
+			return FALSE;
+		}
+
+		// Check to see if the username is found in the database.
+		$this->load->model('people_model');
+		if($this->people_model->get_user_name($str)->num_rows != 0){
+			$this->form_validation->set_message('username_check',
+				'%s is already taken.');
+			return FALSE;
+		}
+		return TRUE;
+	}
+
+	public function equals_password($confirm, $password) {
+		// Make sure to load the validation library
+		$this->load->library('form_validation');
+
+		if ($password != $confirm) {
+			$this->form_validation->set_message('equals_password',
+				'Passwords must match.');
+			return false;
+		}
+
+		return true;
+	}
 };
 ?>
