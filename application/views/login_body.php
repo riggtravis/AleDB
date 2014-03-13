@@ -15,7 +15,7 @@
   $username = array(
     'username'	=> 'username',
     'id'			  => 'username',
-    'value'		  => 'username',
+    'value'		  => set_value('username'),
     'name'		  => 'username',
     'maxlength'	=> '20'
   );
@@ -28,7 +28,7 @@
   $password = array(
     'password'	=> 'password',
     'id'			  => 'password',
-    'value'		  => 'password',
+    'value'		  => set_value('password'),
     'name'		  => 'password'
   );
   
