@@ -8,7 +8,8 @@
   echo validation_errors();
   
   // This form is for the login.
-  echo form_open('login/validate');
+  // Add bootstrap information.
+  echo form_open('login/validate', array('class' => 'form-horizontal', 'role' => 'form'));
   
   // We need to get the user name and the password.
   // Set the maximum length for the username to what it is in the database.
