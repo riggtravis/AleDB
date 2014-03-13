@@ -8,7 +8,8 @@
 		
 		// We're going to validate this data because we have certain
 		//	requirements the data must meet.
-		echo form_open("professor/course_validate");
+		// Add the bootstrap information
+		echo form_open("professor/course_validate", array('class' => 'form-horizontal', 'role' => 'form'));
 		
 		echo form_label('Department', 'department');
 		$department = array(
