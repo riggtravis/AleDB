@@ -20,6 +20,9 @@
 			body {
 				padding-bottom: 70px;
 			}
+			label {
+				padding: 10px;
+			}
 		</style>
 	</head>
 	<body>
