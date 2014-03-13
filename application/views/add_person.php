@@ -63,47 +63,58 @@
         'maxlength' => '1',
 	'class'	    => 'form-control'
       );
-      
-      // Add labels to all of the inputs using the form helper label function.
-      echo form_label('Username', 'username', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
     ?>
-    <div class='col-sm-1 col-md-1 col-lg-1'>
-      <?php
-	echo form_input($username);
-      ?>
-    </div>
-    <?php
-      echo form_label('Password', 'password', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
-    ?>
-    <div class='col-sm-1 col-md-1 col-lg-1'>
-      <?php
-	echo form_password($password);
-      ?>
-    </div>
-    <?php
-      echo form_label('Confirm', 'confirm', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
-    ?>
-    <div class='col-sm-1 col-md-1 col-lg-1'>
-      <?php
-	echo form_password($confirm);
-      ?>
-    </div>
-    <?php
-      echo form_label('Firstname', 'fname', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
-    ?>
-    <div class='col-sm-1 col-md-1 col-lg-1'>
-      <?php
-	echo form_input($fname);
-      ?>
-    </div>
-    <?php
-      echo form_label('Lastname', 'lname', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
-    ?>
-    <div class='col-sm-1 col-md-1 col-lg-1'>
-      <?php
-	echo form_input($lname);
-      ?>
-    </div>
+    <div class='form-group'>
+	    <?php
+	      // Add labels to all of the inputs using the form helper label function.
+	      echo form_label('Username', 'username', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
+	    ?>
+	    <div class='col-sm-1 col-md-1 col-lg-1'>
+	      <?php
+					echo form_input($username);
+	      ?>
+	    </div>
+		</div>
+		<div class='form-group'>
+	    <?php
+	      echo form_label('Password', 'password', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
+	    ?>
+	    <div class='col-sm-1 col-md-1 col-lg-1'>
+	      <?php
+					echo form_password($password);
+	      ?>
+	    </div>
+	  </div>
+	  <div class='form-group'>
+	    <?php
+	      echo form_label('Confirm', 'confirm', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
+	    ?>
+	    <div class='col-sm-1 col-md-1 col-lg-1'>
+	      <?php
+					echo form_password($confirm);
+	      ?>
+	    </div>
+	  </div>
+	  <div class='form-group'>
+	    <?php
+	      echo form_label('Firstname', 'fname', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
+	    ?>
+	    <div class='col-sm-1 col-md-1 col-lg-1'>
+	      <?php
+					echo form_input($fname);
+	      ?>
+	    </div>
+	  </div>
+	  <div class='form-group'>
+	    <?php
+	      echo form_label('Lastname', 'lname', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
+	    ?>
+	    <div class='col-sm-1 col-md-1 col-lg-1'>
+	      <?php
+					echo form_input($lname);
+	      ?>
+	    </div>
+	  </div>
     <?php
       
       $roles = array(
@@ -111,19 +122,27 @@
         1 => "Community Partner",
         2 => "Student"
       );
-      
-      echo form_label('Role', 'role', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
     ?>
-    <div class='col-sm-1 col-md-1 col-lg-1'>
-      <?php
-	echo form_dropdown('role', $roles, 'Student');
-      ?>
+    <div class='form-group'>
+	    <?php
+	      echo form_label('Role', 'role', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
+	    ?>
+	    <div class='col-sm-1 col-md-1 col-lg-1'>
+	      <?php
+					echo form_dropdown('role', $roles, 'Student');
+	      ?>
+	    </div>
     </div>
     <?php
-      
       $js = 'onClick="hash()"';
-      echo form_label('submit', 'submit', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
-      echo form_submit('submit', 'Go', $js);
+    ?>
+    <div class='form-group'>
+	    <?php
+	      echo form_label('submit', 'submit', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
+	      echo form_submit('submit', 'Go', $js);
+	    ?>
+    </div>
+    <?php
       echo form_close();
     ?>
   </div>
