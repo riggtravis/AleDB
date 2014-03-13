@@ -10,7 +10,7 @@
 		//	requirements the data must meet.
 		echo form_open("professor/course_validate");
 		
-		echo "<p>Department</p>";
+		echo form_label('Department', 'department');
 		$department = array(
 			'department'	=> 'department',
 			'id'			=> 'department',
@@ -20,7 +20,7 @@
 		);
 		echo form_input($department);
 		
-		echo "<p>Course Number</p>";
+		echo form_label('Course Number', 'coursenum');
 		$coursenum = array(
 			'coursenum'		=> 'coursenum',
 			'id'			=> 'coursenum',

@@ -13,21 +13,27 @@
   // We need to get the user name and the password.
   // Set the maximum length for the username to what it is in the database.
   $username = array(
-  'username'	=> 'username',
-  'id'			=> 'username',
-  'value'		=> 'username',
-  'name'		=> 'username',
-  'maxlength'	=> '20'
+    'username'	=> 'username',
+    'id'			  => 'username',
+    'value'		  => 'username',
+    'name'		  => 'username',
+    'maxlength'	=> '20'
   );
+  
+  // Add a label before the input.
+  echo form_label('Username', 'username');
   echo form_input($username);
   
   // We also need to store an ID for the password for later.
   $password = array(
     'password'	=> 'password',
-    'id'			=> 'password',
-    'value'		=> 'password',
-    'name'		=> 'password'
+    'id'			  => 'password',
+    'value'		  => 'password',
+    'name'		  => 'password'
   );
+  
+  // Add a label before the input
+  echo form_label('Password', 'password');
   echo form_password($password);
   
   // Make sure that when the button is clicked the hash function is
