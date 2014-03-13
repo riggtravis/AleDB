@@ -21,7 +21,10 @@
 				padding-bottom: 70px;
 			}
 			label {
-				padding: 10px;
+				padding-right: 10px;
+			}
+			input {
+				padding-left: 10px;
 			}
 		</style>
 	</head>
