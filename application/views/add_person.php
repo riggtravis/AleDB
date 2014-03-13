@@ -4,7 +4,7 @@
       // Load the form helper. It will come in handy.
       $this->load->helper("form");
       
-      // Show the validation errors();
+      // Show the validation errors
       echo validation_errors();
       
       // Send the data to a validation function.
@@ -16,7 +16,8 @@
         'id'        => 'username',
         'value'     => set_value('username'),
         'name'      => 'username',
-        'maxlength' => '20'
+        'maxlength' => '20',
+	'class'	    => 'form-control'
       );
       
       // Yeah. We're definitely going to need the login header.
@@ -24,14 +25,16 @@
         'password'  => 'password',
         'id'        => 'password',
         'value'     => set_value('password'),
-        'name'      => 'password'
+        'name'      => 'password',
+	'class'	    => 'form-control'
       );
       
       $confirm = array(
         'confirm'   => 'confirm',
         'id'        => 'confirm',
         'value'     => set_value('confirm'),
-        'name'      => 'confirm'
+        'name'      => 'confirm',
+	'class'	    => 'form-control'
       );
       
       $fname = array(
@@ -39,7 +42,8 @@
         'id'        => 'fname',
         'value'     => set_value('Firt Name'),
         'name'      => 'fname',
-        'maxlength' => '18'
+        'maxlength' => '18',
+	'class'	    => 'form-control'
       );
       
       $lname = array(
@@ -47,7 +51,8 @@
         'id'        => 'lname',
         'value'     => set_value('Last Name'),
         'name'      => 'lname',
-        'maxlength' => '18'
+        'maxlength' => '18',
+	'class'	    => 'form-control'
       );
       
       $role = array(
@@ -55,20 +60,51 @@
         'id'        => 'role',
         'value'     => '2',
         'name'      => 'role',
-        'maxlength' => '1'
+        'maxlength' => '1',
+	'class'	    => 'form-control'
       );
       
       // Add labels to all of the inputs using the form helper label function.
-      echo form_label('Username', 'username');
-      echo form_input($username);
-      echo form_label('Password', 'password');
-      echo form_password($password);
-      echo form_label('Confirm', 'confirm');
-      echo form_password($confirm);
-      echo form_label('Firstname', 'fname');
-      echo form_input($fname);
-      echo form_label('Lastname', 'lname');
-      echo form_input($lname);
+      echo form_label('Username', 'username', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
+    ?>
+    <div class='col-sm-1 col-md-1 col-lg-1'>
+      <?php
+	echo form_input($username);
+      ?>
+    </div>
+    <?php
+      echo form_label('Password', 'password', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
+    ?>
+    <div class='col-sm-1 col-md-1 col-lg-1'>
+      <?php
+	echo form_password($password);
+      ?>
+    </div>
+    <?php
+      echo form_label('Confirm', 'confirm', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
+    ?>
+    <div class='col-sm-1 col-md-1 col-lg-1'>
+      <?php
+	echo form_password($confirm);
+      ?>
+    </div>
+    <?php
+      echo form_label('Firstname', 'fname', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
+    ?>
+    <div class='col-sm-1 col-md-1 col-lg-1'>
+      <?php
+	echo form_input($fname);
+      ?>
+    </div>
+    <?php
+      echo form_label('Lastname', 'lname', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
+    ?>
+    <div class='col-sm-1 col-md-1 col-lg-1'>
+      <?php
+	echo form_input($lname);
+      ?>
+    </div>
+    <?php
       
       $roles = array(
         0 => "Professor",
@@ -76,10 +112,17 @@
         2 => "Student"
       );
       
-      echo form_label('Role', 'role');
-      echo form_dropdown('role', $roles, 'Student');
+      echo form_label('Role', 'role', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
+    ?>
+    <div class='col-sm-1 col-md-1 col-lg-1'>
+      <?php
+	echo form_dropdown('role', $roles, 'Student');
+      ?>
+    </div>
+    <?php
       
       $js = 'onClick="hash()"';
+      echo form_label('submit', 'submit', array('class' => 'col-sm-1 col-md-1 col-lg-1'));
       echo form_submit('submit', 'Go', $js);
       echo form_close();
     ?>

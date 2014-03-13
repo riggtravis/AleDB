@@ -77,6 +77,7 @@ class Professor extends CI_controller {
 		//	the title of the page.
 		$data['title'] = "Courses";
 		$this->load->view('header', $data);
+		$this->load->view('professor_control_center', $data);
 		$this->load->view('courses', $data);
 		$this->load->view('footer');
 	}
@@ -148,6 +149,7 @@ class Professor extends CI_controller {
 		// Direct the user to the create user form.
 		$data['title'] = "Add Person";
 		$this->load->view('login_header', $data);
+		$this->load->view('professor_control_center', $data);
 		$this->load->view('add_person', $data);
 		$this->load->view('footer', $data);
 	}
