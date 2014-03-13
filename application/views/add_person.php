@@ -57,10 +57,16 @@
         'maxlength' => '1'
       );
       
+      // Add labels to all of the inputs using the form helper label function.
+      echo form_label('Username', 'username');
       echo form_input($username);
+      echo form_label('Password', 'password');
       echo form_password($password);
+      echo form_label('Confirm', 'confirm');
       echo form_password($confirm);
+      echo form_label('Firstname', 'fname');
       echo form_input($fname);
+      echo form_label('Lastname', 'lname');
       echo form_input($lname);
       
       $roles = array(
@@ -69,6 +75,7 @@
         2 => "Student"
       );
       
+      echo form_label('Role', 'role');
       echo form_dropdown('role', $roles, 'Student');
       
       $js = 'onClick="hash()"';
