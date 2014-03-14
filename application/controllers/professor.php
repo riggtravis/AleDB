@@ -172,9 +172,9 @@ class Professor extends CI_controller {
 		$this->form_validation->set_rules('confirm', 'confirm',
 			'trim|required|xss_clean|equals_password['.$this->input->post('password').']');
 
-		$this->form_validation->set_rules('firstname', 'fname',
+		$this->form_validation->set_rules('fname', 'fname',
 			'trim|required|xss_clean');
-		$this->form_validation->set_rules('lastname', 'lname',
+		$this->form_validation->set_rules('lname', 'lname',
 			'trim|required|xss_clean');
 
 		if($this->form_validation->run()){	
