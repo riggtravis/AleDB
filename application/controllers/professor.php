@@ -135,6 +135,10 @@ class Professor extends CI_controller {
 	}
 	
 	public function create_group() {
+		// Load needed models
+		$this->load->model('people_model');
+		$this->load->model('courses_model');
+		
 		// Get the course info from the URI.
 		$department	= $this->uri->segment(3);
 		$coursenum	= $this->uri->segment(4);
@@ -143,6 +147,12 @@ class Professor extends CI_controller {
 		//TODO: Look up the create group form in the views.
 		//	If it is not there, then:
 		//		TODO: Crate the create group form.
+		
+		// Get all of the community partners from the database.
+		$data['partner']	= $this->people_model->get_role(2)->result();
+		
+		// Get all of courses from the database.
+		$data['course']		= $this->courses_model->get_all(2)->result();
 	}
 	
 	public function add_person() {
