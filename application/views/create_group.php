@@ -2,7 +2,7 @@
 	// Start by loading the form helper.
 	$this->load->helper('form');
 	
-	echo form_open('professor/group_validate')
+	echo form_open('professor/group_validate/'.$this->uri->segment(3).'/'.$this->uri->segment(4));
 	
 	// The department and course number have already been loaded via
 	//	the controller.
