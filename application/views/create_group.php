@@ -20,7 +20,7 @@
 	foreach($course as $c){
 		$c_options[$c->CourseID] = $c->Department . ' ' . $c->CourseNum;
 	}
-	echo form_dropdown('partners', $c_options, key($c_options));
+	echo form_dropdown('courses', $c_options, key($c_options));
 	
 	// Term should be a drop down.
 	$term = array(
