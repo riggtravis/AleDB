@@ -40,7 +40,7 @@
 		'value'		=> set_value('year'),
 		'maxlength'	=> '4'
 	);
-	echo form_input($year)
+	echo form_input($year);
 	
 	// Need us a submit button.
 	$data = array(
