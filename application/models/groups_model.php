@@ -4,7 +4,7 @@ class Groups_model extends CI_Model {
   function insert_entry($communityPartner, $course, $term, $year) {
     // Use an active record function to insert the Group.
     $this->db->insert('Groups', array(
-						'CommunityPartner'	=> $department, 
+						'CommunityPartner'		=> $communityPartner, 
 						'Course'			=> $course,
 						'Term'		 		=> $term,
 						'Year'		  		=> $year)
