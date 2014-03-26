@@ -134,27 +134,6 @@ class Professor extends CI_controller {
 		$this->load->view('footer', $data);
 	}
 	
-	public function create_group() {
-		// Load needed models
-		$this->load->model('people_model');
-		$this->load->model('courses_model');
-		
-		// Get the course info from the URI.
-		$department	= $this->uri->segment(3);
-		$coursenum	= $this->uri->segment(4);
-		
-		// Load the create group form.
-		//TODO: Look up the create group form in the views.
-		//	If it is not there, then:
-		//		TODO: Crate the create group form.
-		
-		// Get all of the community partners from the database.
-		$data['partner']	= $this->people_model->get_role(2)->result();
-		
-		// Get all of courses from the database.
-		$data['course']		= $this->courses_model->get_all(2)->result();
-	}
-	
 	public function add_person() {
 		// Direct the user to the create user form.
 		$data['title'] = "Add Person";
@@ -170,7 +149,8 @@ class Professor extends CI_controller {
 
 		// Change the error type.
 		$this->form_validation->set_error_delimiters(
-			'<div class="error">', '</div>');
+			'<div class="error">', '</div>'
+		);
 
 		// Set the validation rules.
 		$this->form_validation->set_rules('username', 'username',
@@ -204,6 +184,67 @@ class Professor extends CI_controller {
 			$this->load->view('login_header', $data);
 			$this->load->view('professor_control_center', $data);
 			$this->load->view('add_person', $data);
+			$this->load->view('footer', $data);
+		}
+	}
+	
+	public function create_group() {
+		// Load needed models
+		$this->load->model('people_model');
+		$this->load->model('courses_model');
+		
+		// Get the course info from the URI.
+		$department	= $this->uri->segment(3);
+		$coursenum	= $this->uri->segment(4);
+		
+		// Load the create group form.
+		//TODO: Look up the create group form in the views.
+		//	If it is not there, then:
+		//		TODO: Crate the create group form.
+		
+		// Get all of the community partners from the database.
+		$data['partner']	= $this->people_model->get_role(2)->result();
+		
+		// Get all of courses from the database.
+		$data['course']		= $this->courses_model->get_all()->result();
+		
+		$data['title']		= 'Add a Group';
+		
+		$this->load->view('header', $data);
+		$this->load->view('professor_control_center', $data);
+		$this->load->view('create_group', $data);
+		$this->load->view('footer', $data);
+	}
+	
+	public function group_validate(){
+		// Load the validation helper
+		$this->load->helper('form_validation');
+		
+		// Change the error type.
+		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+		
+		// The only needed rule is to make sure the year has been entered. Everything else is a dropdown.
+		$this->form_validation->set_rules('year', 'year', 'trim|required|xss_clean');
+		
+		if($this->form_validation->run()){
+			// Add the new entry.
+			$this->load->model('groups_model');
+			$this->groups_model->insert_entry(
+				$this->input->post('partners'),
+				$this->input->post('courses'),
+				$this->input->post('terms'),
+				$this->input->post('year')
+			);
+		}
+		else{
+			$this->load->model('people_model');
+			$this->load->model('courses_model');
+			$data['title']		= "Add Group";
+			$data['partner']	= $this->people_model->get_role(2)->result();
+			$data['course']		= $this->courses_model->get_all()->result();
+			$this->load->view('login_header', $data);
+			$this->load->view('professor_control_center', $data);
+			$this->load->view('create_group', $data);
 			$this->load->view('footer', $data);
 		}
 	}
