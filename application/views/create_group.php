@@ -14,7 +14,7 @@
 	}
 	
 	// Get a key value from $p_options
-	echo form_dropdown('partners', $p_options, key($p_option));
+	echo form_dropdown('partners', $p_options, key($p_options));
 	
 	// Do the same for the courses.
 	foreach($course as $c){
@@ -43,7 +43,7 @@
 	echo form_input($year);
 	
 	// Need us a submit button.
-	$data = array(
+	$submit = array(
 		'submit'	=> 'submit',
 		'name'		=> 'submit',
 		'id'		=> 'submit'
