@@ -218,7 +218,7 @@ class Professor extends CI_controller {
 	
 	public function group_validate(){
 		// Load the validation helper
-		$this->load->helper('form_validation');
+		$this->load->library('form_validation');
 		
 		// Change the error type.
 		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
