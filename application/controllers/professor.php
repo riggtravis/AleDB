@@ -203,7 +203,7 @@ class Professor extends CI_controller {
 		//		TODO: Crate the create group form.
 		
 		// Get all of the community partners from the database.
-		$data['partner']	= $this->people_model->get_role(2)->result();
+		$data['partner']	= $this->people_model->get_role(1)->result();
 		
 		// Get all of courses from the database.
 		$data['course']		= $this->courses_model->get_all()->result();
@@ -240,7 +240,7 @@ class Professor extends CI_controller {
 			$this->load->model('people_model');
 			$this->load->model('courses_model');
 			$data['title']		= "Add Group";
-			$data['partner']	= $this->people_model->get_role(2)->result();
+			$data['partner']	= $this->people_model->get_role(1)->result();
 			$data['course']		= $this->courses_model->get_all()->result();
 			$this->load->view('login_header', $data);
 			$this->load->view('professor_control_center', $data);
