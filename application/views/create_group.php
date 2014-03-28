@@ -49,7 +49,8 @@
 	$submit = array(
 		'submit'	=> 'submit',
 		'name'		=> 'submit',
-		'id'		=> 'submit'
+		'id'		=> 'submit',
+		'value'		=> 'Go'
 	);
 	echo form_button($submit);
 	
