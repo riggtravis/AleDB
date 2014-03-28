@@ -52,7 +52,7 @@
 		'id'		=> 'submit',
 		'value'		=> 'Go'
 	);
-	echo form_button($submit);
+	echo form_submit($submit);
 	
 	// We're done here.
 	echo form_close();
